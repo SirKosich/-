@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://jmgvesl1pixl"]
+
+[ext_resource type="PackedScene" uid="uid://d21olv1amgwvx" path="res://mario.tscn" id="1_lp5mx"]
+[ext_resource type="Script" path="res://mario.gd" id="2_ebly2"]
+[ext_resource type="Texture2D" uid="uid://cpkannwoa1xa7" path="res://icon.svg" id="3_6nclj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3172"]
+size = Vector2(1304.75, 92)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-24, 33)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_lp5mx")]
+position = Vector2(49, -71)
+script = ExtResource("2_ebly2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-10, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(137, 12)
+shape = SubResource("RectangleShape2D_g3172")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(136.5, 15)
+scale = Vector2(10.1797, 0.765625)
+texture = ExtResource("3_6nclj")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1vnuav3vp6yv"]
+
+[ext_resource type="Script" path="res://меню.gd" id="1_f248u"]
+[ext_resource type="PackedScene" uid="uid://dkuub64ntns10" path="res://бекграунд.tscn" id="2_hcfav"]
+
+[node name="Меню" type="Node2D"]
+script = ExtResource("1_f248u")
+
+[node name="play" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 160.0
+offset_right = 706.0
+offset_bottom = 239.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 404.0
+offset_right = 706.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="Бекграунд" parent="." instance=ExtResource("2_hcfav")]
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
